@@ -132,19 +132,17 @@ var endGame = function () {
 var shop = function () {
     // ask player what they'd like to do
     var shopOptionPrompt = window.prompt(
-        "Would you like to REPAIR your Robot, UPGRADE your Robot, or LEAVE the store? Please enter one: 'REPAIR', 'UPGRADE', or 'LEAVE' to make a choice."
+        "Would you like to REPAIR your Robot, UPGRADE your Robot, or LEAVE the store? Please enter: 1 for 'REPAIR', 2 for 'UPGRADE', or 3 to LEAVE to make a choice."
     );
+    shopOptionPrompt = parseInt(shopOptionPrompt);
     switch (shopOptionPrompt) {
-        case "REPAIR": // new case
-        case "repair":
+        case 1:
             playerInfo.refillHealth();
             break;
-        case "UPGRADE": // new case
-        case "upgrade":
+        case 2:
             playerInfo.upgradeAttack();
             break;
-        case "LEAVE": // new case
-        case "leave":
+        case 3:
             window.alert("Leaving the store.");
 
             // do nothing, so function will end
